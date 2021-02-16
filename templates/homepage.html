@@ -51,38 +51,6 @@ KyutGrill=homepage2.jpg
 	{{ end }}
 </div>
 <script type="text/javascript" defer="">
-	var jsonStats  = JSON.parse({{ .PenisData }});
-
-  const resizeEl = () => {
-      let needEl = $(".js-scale");
-      if (needEl.length < 1) return;
-
-      let parentSize = needEl[0].parentElement.getBoundingClientRect();
-      let width = null;
-      let height = null;
-
-      if (parentSize.width / parentSize.height > 16 / 9) {
-          width = parentSize.width;
-          height = 9 / 16 * width;
-      } else {
-          height = parentSize.height;
-          width = 16 / 9 * height;
-      }
-
-      if (width && height) {
-          needEl[0].style.height = `${height}px`;
-          needEl[0].style.width = `${width}px`;
-      }
-  }
-
-  window.onload = () => {
-      let graph = new LandingUserStats();
-      $(window).resize(() => {
-          graph.resize();
-      })
-  }
-</script>
-<script type="text/javascript" defer="">
     class LandingUserStats {
             constructor() {
                 this.margin = {
